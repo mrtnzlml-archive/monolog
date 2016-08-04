@@ -1,0 +1,5 @@
+monolog:
+	handlers:
+		- Monolog\Handler\BrowserConsoleHandler()
+		- Monolog\Handler\ChromePHPHandler()
+		- Monolog\Handler\NewRelicHandler()
