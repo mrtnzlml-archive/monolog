@@ -9,6 +9,7 @@ before_script:
   - composer selfupdate --no-progress
   - travis_retry composer install --prefer-dist
   - Vendor/bin/parallel-lint Monolog/ Tests/ -e php,php3,php4,php5,phtml,phpt --exclude vendor --blame
+  - mkdir Tests/tmp
 
 script:
   - Vendor/bin/tester Tests/ -C
