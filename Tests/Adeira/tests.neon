@@ -1,0 +1,6 @@
+application:
+	scanDirs: no
+
+
+extensions:
+	monolog: Adeira\Monolog\DI\MonologExtension

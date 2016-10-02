@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrtnzlml\Monolog\Handler;
+namespace Adeira\Monolog\Handler;
 
 class SlackHandler extends \Monolog\Handler\SlackHandler
 {

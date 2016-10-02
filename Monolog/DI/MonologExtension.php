@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrtnzlml\Monolog\DI;
+namespace Adeira\Monolog\DI;
 
 use Monolog\Formatter;
 use Monolog\Processor;
@@ -14,10 +14,10 @@ use Nette\DI;
 class MonologExtension extends \Kdyby\Monolog\DI\MonologExtension
 {
 
-	const TAG_FORMATTER = 'mrtnzlml.monolog.formatter';
-	const TAG_PROCESSOR = 'mrtnzlml.monolog.processor';
-	const TAG_HANDLER = 'mrtnzlml.monolog.handler';
-	const TAG_LOGGER = 'mrtnzlml.monolog.logger';
+	const TAG_FORMATTER = 'adeira.monolog.formatter';
+	const TAG_PROCESSOR = 'adeira.monolog.processor';
+	const TAG_HANDLER = 'adeira.monolog.handler';
+	const TAG_LOGGER = 'adeira.monolog.logger';
 
 	public $defaults = [
 		'formatters' => [

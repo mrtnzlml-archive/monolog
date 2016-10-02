@@ -1,8 +1,8 @@
 <?php
 
-namespace Mrtnzlml\Monolog\Tests;
+namespace Adeira\Monolog\Tests;
 
-use Mrtnzlml\Monolog\DI;
+use Adeira\Monolog\DI;
 use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
@@ -72,7 +72,7 @@ class Extension extends \Tester\TestCase
 		$refreshedContainer = $this->refreshContainer([
 			'monolog' => [
 				'loggers' => [
-					['class' => \Mrtnzlml\Monolog\Tests\Mocks\CustomLogger::class],
+					['class' => \Adeira\Monolog\Tests\Mocks\CustomLogger::class],
 				],
 			],
 		]);
@@ -86,7 +86,7 @@ class Extension extends \Tester\TestCase
 		$refreshedContainer = $this->refreshContainer([
 			'monolog' => [
 				'loggers' => [
-					'named' => ['class' => \Mrtnzlml\Monolog\Tests\Mocks\CustomLogger::class],
+					'named' => ['class' => \Adeira\Monolog\Tests\Mocks\CustomLogger::class],
 				],
 			],
 		]);
@@ -101,7 +101,7 @@ class Extension extends \Tester\TestCase
 			'monolog' => [
 				'handlers' => [
 					'slack' => [
-						'class' => new \Nette\DI\Statement(\Mrtnzlml\Monolog\Handler\SlackHandler::class, [
+						'class' => new \Nette\DI\Statement(\Adeira\Monolog\Handler\SlackHandler::class, [
 							'%productionMode%',
 							'slack.token', //DIY
 							'slack.channel',
@@ -129,7 +129,7 @@ class Extension extends \Tester\TestCase
 
 		Assert::same([
 			\Kdyby\Monolog\Handler\FallbackNetteHandler::class,
-			\Mrtnzlml\Monolog\Handler\SlackHandler::class,
+			\Adeira\Monolog\Handler\SlackHandler::class,
 			\Monolog\Handler\ErrorLogHandler::class,
 		], array_map(function ($item) {
 			return get_class($item);

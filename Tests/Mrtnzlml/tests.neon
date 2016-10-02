@@ -1,6 +1,0 @@
-application:
-	scanDirs: no
-
-
-extensions:
-	monolog: Mrtnzlml\Monolog\DI\MonologExtension

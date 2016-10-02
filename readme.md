@@ -14,16 +14,16 @@ Inspiration:
 Installation
 ------------
 
-	composer require mrtnzlml/monolog
+	composer require adeira/monolog
 
 And register DI extension in `config.neon`:
 
 	extensions:
-		monolog: Mrtnzlml\Monolog\DI\MonologExtension
+		monolog: Adeira\Monolog\DI\MonologExtension
 
 Default configuration
 ---------------------
-Package `mrtnzlml/monolog` brings a lot of [formatters](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#formatters) and [processors](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#processors) by default. This means you can use them only by name. Here is the complete list of defaults:
+Package `adeira/monolog` brings a lot of [formatters](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#formatters) and [processors](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#processors) by default. This means you can use them only by name. Here is the complete list of defaults:
 
 	formatters:
 		chromePHP: Monolog\Formatter\ChromePHPFormatter
@@ -77,7 +77,7 @@ As you already know - this package extends kdyby\monolog. And there is default g
 	monolog:
 		handlers:
 			slack:
-				class: Mrtnzlml\Monolog\Handler\SlackHandler(
+				class: Adeira\Monolog\Handler\SlackHandler(
 					%productionMode%,
 					%slack.token%,
 					%slack.channel%,
@@ -100,7 +100,7 @@ This way you can setup a lot of loggers with different configuration (handlers, 
 
 Using Kdyby configuration options
 ---------------------------------
-Package `mrtnzlml/monolog` is not playing with Kdyby configuration so you can use it if you want to without changes:
+Package `adeira/monolog` is not playing with Kdyby configuration so you can use it if you want to without changes:
 
 	monolog:
 		hookToTracy: yes

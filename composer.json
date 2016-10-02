@@ -1,5 +1,5 @@
 {
-  "name": "mrtnzlml/monolog",
+  "name": "adeira/monolog",
   "type": "library",
   "license": [
     "BSD-3-Clause",
@@ -25,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mrtnzlml\\Monolog\\": "Monolog/"
+      "Adeira\\Monolog\\": "Monolog/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mrtnzlml\\Monolog\\Tests\\": "Tests/Mrtnzlml/Monolog/"
+      "Adeira\\Monolog\\Tests\\": "Tests/Adeira/Monolog/"
     }
   },
   "config": {
