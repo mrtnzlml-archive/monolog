@@ -1,6 +1,8 @@
 More awesome Monolog for Nette Framework
 ========================================
 
+[![Build Status](https://travis-ci.org/adeira/monolog.svg?branch=master)](https://travis-ci.org/adeira/monolog)
+
 This package is extending [Kdyby\Monolog](https://github.com/Kdyby/Monolog) to make it more flexible, configurable and awesome.
 
 Inspiration:
