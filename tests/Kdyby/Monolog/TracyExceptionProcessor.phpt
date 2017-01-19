@@ -65,7 +65,7 @@ class TracyExceptionProcessorTest extends Tester\TestCase
 		$processed = call_user_func($this->processor, $record);
 		Assert::match('exception-%a%.html', $processed['context']['tracy']);
 		Assert::true(file_exists(TEMP_DIR . '/' . $processed['context']['tracy']));
-		Assert::true(isset($processed['context']['exception']));
+		Assert::false(isset($processed['context']['exception']));
 	}
 
 }

@@ -91,7 +91,8 @@ class ExtensionTest extends Tester\TestCase
 		);
 
 		Assert::match(
-			'[%a%] exception message 1 {"exception":"%a%","tracy":"exception-%a%.html"} []',
+			'[%a%] exception message 1 {"tracy":"exception-%a%.html"} []',
+//			'[%a%] exception message 1 {"exception":"%a%","tracy":"exception-%a%.html"} []',
 			file_get_contents(TEMP_DIR . '/warning.log')
 		);
 
