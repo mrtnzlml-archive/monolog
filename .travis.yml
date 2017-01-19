@@ -8,13 +8,12 @@ php:
 before_script:
   - composer selfupdate --no-progress
   - travis_retry composer install --prefer-dist
-  - Vendor/bin/parallel-lint Monolog/ Tests/ -e php,php3,php4,php5,phtml,phpt --exclude vendor --blame
-  - mkdir Tests/tmp
+  - vendor/bin/parallel-lint Monolog/ tests/ -e php,php3,php4,php5,phtml,phpt --exclude vendor --blame
 
 script:
-  - Vendor/bin/tester Tests/ -C
-  - Vendor/bin/phpcs --standard=ruleset.xml --extensions=php --encoding=utf-8 --tab-width=4 -sp Monolog/
-  - Vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp Tests/Adeira --ignore=*/output/*,_temp/*,bootstrap.php
+  - vendor/bin/tester tests/ -C
+  - vendor/bin/phpcs --standard=ruleset.xml --extensions=php --encoding=utf-8 --tab-width=4 -sp Monolog/
+  - vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp tests/Adeira --ignore=*/output/*,_temp/*,bootstrap.php
 
 notifications:
   email: false

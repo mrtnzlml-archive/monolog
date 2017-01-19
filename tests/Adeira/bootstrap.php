@@ -1,9 +1,9 @@
 <?php
 
-require __DIR__ . '/../../Vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 // create temporary directory
-define('TEMP_DIR', __DIR__ . '/../tmp/' . (isset($_SERVER['argv']) ? md5(serialize($_SERVER['argv'])) : getmypid()));
+define('TEMP_DIR', __DIR__ . '/../tmp/adeira_thread_' . getenv(Tester\Environment::THREAD));
 Tester\Helpers::purge(TEMP_DIR);
 Tracy\Debugger::$logDirectory = TEMP_DIR;
 
