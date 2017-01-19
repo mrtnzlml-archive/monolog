@@ -13,8 +13,6 @@ before_script:
 
 script:
   - Vendor/bin/tester Tests/ -C
-
-after_script:
   - Vendor/bin/phpcs --standard=ruleset.xml --extensions=php --encoding=utf-8 --tab-width=4 -sp Monolog/
   - Vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp Tests/Adeira --ignore=*/output/*,_temp/*,bootstrap.php
 
