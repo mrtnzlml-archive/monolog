@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Adeira\Monolog\DI;
 
@@ -83,7 +83,9 @@ class MonologExtension extends \Kdyby\Monolog\DI\MonologExtension
 		//HANDLERS
 		foreach ($config['handlers'] as $handlerName => $handlerConfig) {
 			if (is_string($handlerConfig)) {
-				throw new \Nette\UnexpectedValueException("Wrong handler format. Handlers configuration must be in this format:\n\nhandlers:\n\t{$handlerName}:\n\t\tclass: $handlerConfig\n\t\t[formatter: formatterName]\n\t\t[processors: [processorName, ...]]");
+				$message = 'Wrong handler format. Handlers configuration must be in this format:' .
+					"\n\nhandlers:\n\t{$handlerName}:\n\t\tclass: $handlerConfig\n\t\t[formatter: formatterName]\n\t\t[processors: [processorName, ...]]";
+				throw new \Nette\UnexpectedValueException($message);
 			}
 
 			DI\Compiler::loadDefinitions($builder, [
@@ -121,7 +123,9 @@ class MonologExtension extends \Kdyby\Monolog\DI\MonologExtension
 				}
 
 				if (is_string($loggerConfig)) {
-					throw new \Nette\UnexpectedValueException("Wrong logger format. Loggers configuration must be in this format:\n\nloggers:\n\t{$loggerName}:\n\t\tclass: $loggerConfig\n\t\t[processors: [processorName, ...]]\n\t\t[handlers: [handlerName, ...]]");
+					$message = 'Wrong logger format. Loggers configuration must be in this format:' .
+						"\n\nloggers:\n\t{$loggerName}:\n\t\tclass: $loggerConfig\n\t\t[processors: [processorName, ...]]\n\t\t[handlers: [handlerName, ...]]";
+					throw new \Nette\UnexpectedValueException($message);
 				}
 
 				DI\Compiler::loadDefinitions($builder, [
